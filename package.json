@@ -11,12 +11,17 @@
     "lint": "eslint \"./src/**/*.{js, jsx,ts,tsx}\" --quiet --fix && eslint \"./**/*.{js, jsx,ts,tsx}\" --quiet --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,html}\"",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx,css,scss,html}\"",
+    "gen-env": "gen-env-types .env -o src/types/env.d.ts -e .",
     "prepare": "husky install",
     "preinstall": "npm run check:node",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@fontsource/poppins": "^4.5.8",
+    "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
     "check-node-version": "^4.2.1",
+    "gen-env-types": "^1.3.4",
     "husky": "^8.0.1",
     "next": "12.2.0",
     "next-seo": "^5.4.0",
@@ -30,15 +35,16 @@
     "stylelint-prettier": "^2.0.0"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.3.0",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "eslint": "8.19.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.0",
     "eslint-plugin-react": "^7.30.1",
@@ -47,8 +53,7 @@
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.3",
-    "typescript": "4.7.4",
-    "@types/react": "18.0.14"
+    "typescript": "4.7.4"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -57,8 +62,8 @@
     "*.{js,jsx,ts,tsx,css,scss,html}": [
       "prettier --write"
     ]
-  },    "@types/react": "18.0.14",
-
+  },
+  "@types/react": "18.0.14",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog",
